@@ -1,0 +1,130 @@
+<html>
+<head>
+<base href="https://dictatorshipcreator.github.io/REPO_6A/">
+    <title>Operador en JS</title>
+</head>
+<body>
+
+<h2>Variables</h2>
+
+<label for="a">Valor de a:</label>
+<input type="number" id="a" value="33"><br><br>
+
+<label for="b">Valor de b:</label>
+<input type="number" id="b" value="10"><br><br>
+
+<label for="c">Valor de c (texto):</label>
+<input type="text" id="c" value=" Elefantitos"><br><br>
+
+<label for="aB">aB (booleano):</label>
+<select id="aB">
+    <option value="true">true</option>
+    <option value="false">false</option>
+</select><br><br>
+
+<label for="bB">bB (booleano):</label>
+<select id="bB">
+    <option value="true">true</option>
+    <option value="false" selected>false</option>
+</select><br><br>
+
+<button onclick="calcular()">Calcular</button>
+
+<div id="resultado" style="margin-top:20px;"></div>
+
+<script type="text/javascript">
+    function calcular() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let c = document.getElementById("c").value;
+
+		let opb = `
+		<details><summary><b>Operaciones basicas:</b></summary>
+			a + b = ${a + b}<br>
+            a - b = ${a - b}<br>
+            a * b = ${a*b}<br>
+            a / b = ${b !== 0 ? (a / b).toFixed(10) : "Dividir por cero no es recomendable, te lleva a lugares terribles"}<br><br>
+            <b>Texto ingresado (c):</b> ${c}<br>
+            <b>Concatenado con resultado de suma:</b> ${a + b + c}<br>
+			<b>Concatenado con resultado de resta:</b> ${a - b + c}<br>
+			<b>Concatenado con resultado de multiplicación:</b> ${a*b + c}<br>
+			<b>Concatenado con resultado de division:</b> ${b !==0 ? (a/b).toFixed(10) + c + ", pobres" + c : "los" + c + " estan en un lugar muy malo ahora, ¿quien los salvara?"}<br><br>
+		</details>
+		`
+		
+		let comp = `
+        <details><summary><b>Comparaciones:</b></summary>
+            ¿Son iguales?: (a == b) => ${a == b}<br>
+            ¿El valor b es mayor al valor a?:(a < b) => ${a < b}<br>
+            ¿El valor a es mayor al valor b?: (a > b) => ${a > b}<br>
+            ¿Son distintos?: (a != b) => ${a != b}<br>
+            ¿El valor a es mayor o igual al valor b?: (a >= b) => ${a >= b}<br>
+            ¿El valor b es mayor o igual al valor a?: (a <= b) => ${a <= b}<br><br>
+		</details>
+		`
+		
+		let ab = document.getElementById("aB").value === "true";
+        let bb = document.getElementById("bB").value === "true";
+        let bl = `
+        <details><summary><b>Operaciones Lógicas:</b></summary>
+            And: (aB && bB) => ${ab && bb}<br>
+            Or: (aB || bB) => ${ab || bb}<br>
+            Not: !(aB && bB) => ${!(ab && bb)}<br><br>
+		</details>
+		`
+		
+		let bw =`
+		<details><summary><b>Operaciones Bit a Bit</b></summary>
+			And bit a bit: (a & b) => ${a & b}<br>
+			Or bit a bit: (a | b) => ${a | b}<br>
+			Xor bit a bit: (a ^ b) => ${a ^ b}<br>
+			Not bit a bit: (~b) => ${~b}<br>
+			Mover a la izq. (*2a): (a << b) => ${a << b}<br>
+			Mover a la izq. [/2a (redondeado para abajo)]: (a >> b) => ${a >> b}<br>
+		</details>
+		`
+		
+		let oa =`
+		<details><summary><b>Operadores de Asignacion</b></summary>
+			Asignación simple: a = b => a = ${ C = b }<br>
+			Asignación con addición: a += b equivale a = a + b => a = ${C = a, a += b}<br>
+			Asignación con sustracción: a -= b equivale a = a - b => a = ${a = C, a -= b}<br> 
+			Asignación con multiplicación: a *= b equivale a = a*b => a = ${a = C, a *= b}<br> 
+			Asignación con division: a /= b equivale a = a/b => a = ${a = C, a /= b}<br> 
+			Asignación con modulo: a %= b equivale a = a%b => a = ${a = C, a %= b}<br>
+			Sucesión de valores si no hubiera reiniciado "a" en cada paso: ${a = C, C=b} => ${C += b} => ${C -= b} => ${C *=b} => ${C /= b} => ${C %= b}
+		</details>
+		`
+		
+		let con =`
+		<details><summary><b>Condicional</b></summary>
+			multiplicar por 10 el valor más alto: C = a > b ? a*10 : b*10 => C = ${C = (a > b) ? a*10 : b*10}<br>
+			multiplicar por 10 el valor más bajo: C = a < b ? a*10 : b*10 => C = ${C = (a < b) ? a*10 : b*10}<br>
+		</details>
+		`
+		let Typeofv =`
+		<details><summary><b>Tipo de variable</b></summary>
+			${typeof a == "string" ? "a es tipo String" : (typeof a == "number" ? "a es numerica": "a es bolleana")}<br>
+			${typeof b == "string" ? "b es tipo String" : (typeof b == "number" ? "b es numerica": "b es bolleana")}<br>
+			${typeof c == "string" ? "c es tipo String" : (typeof c == "number" ? "c es numerica": "c es bolleana")}<br>
+			${typeof ab == "string" ? "aB es tipo String" : (typeof ab == "number" ? "aB es numerica": "aB es bolleana")}<br>
+			${typeof bb == "string" ? "BB es tipo String" : (typeof bb == "number" ? "bB es numerica": "bB es bolleana")}<br>
+		</details>
+		`
+		
+        let resultadoTexto = `
+            <h3><b>Resultados:</b></h3><br>
+			${opb}</br>
+			${comp}<br>
+			${bl}<br>
+			${bw}<br>
+			${oa}<br>
+			${con}<br>
+			${Typeofv}<br>
+		`;
+        document.getElementById("resultado").innerHTML = resultadoTexto;
+	}
+</script>
+<a href=""> volver :) </a>
+</body>
+</html>

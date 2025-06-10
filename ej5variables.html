@@ -1,0 +1,58 @@
+<html>
+<head>
+<base href="https://dictatorshipcreator.github.io/REPO_6A/">
+<title> 
+- 5-variables (página 18)
+</title>
+</head>
+<body>
+<h2>Demostración de Scope (Ámbito) en JavaScript</h2>
+
+<button onclick="checkscope()">Mostrar Variables</button>
+<button onclick="mostrarCodigo()">Mostrar Código Usado</button>
+
+<div id="resultado"></div>
+<pre id="codigo"></pre>
+
+<script type="text/javascript"> 
+    var myVar = "global"; // Variable global
+
+    function checkscope() { 
+        var myVar = "local";  // Variable local
+        let resultado = document.getElementById("resultado");
+        
+        // Mostrar resultados
+        resultado.innerHTML = "<p>Dentro de la función: " + myVar + "</p>";
+        resultado.innerHTML += "<p>Fuera de la función: " + window.myVar + "</p>";
+
+        // Borrar resultados después de 5 segundos (5000 milisegundos)
+        setTimeout(function() {
+            resultado.innerHTML = "";
+        }, 5000);
+    }
+  function mostrarCodigo() {
+        const codigo = `
+var myVar = "global"; // Variable global
+
+function checkscope() { 
+    var myVar = "local";  // Variable local
+    let resultado = document.getElementById("resultado");
+    
+    resultado.innerHTML = "<p>Dentro de la función: " + myVar + "</p>";
+    resultado.innerHTML += "<p>Fuera de la función: " + window.myVar + "</p>";
+
+    setTimeout(function() {
+        resultado.innerHTML = "";
+    }, 5000);
+}`;
+        let contenedor = document.getElementById("codigo");
+        contenedor.textContent = codigo;
+        contenedor.style.display = "block";
+		
+    setTimeout(function() {
+            contenedor.style.display = "none";
+        }, 10000);
+    }
+</script>
+<a href=""> volver :) </a>
+</html>

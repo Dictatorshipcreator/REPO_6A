@@ -1,0 +1,110 @@
+<html> 
+<head> 
+<base href="https://dictatorshipcreator.github.io/REPO_6A/">
+<script type="text/javascript">  
+function SayHello()  
+{  
+  document.write ("bienvenido al ejercicio 13"); 
+	setTimeout(function() {
+		location.reload();
+		}, 2500);
+}  
+</script>  
+ 
+<script type="text/javascript">  
+function ne(name, age) 
+{ 
+   document.write (name + " tiene" + age + " años."); 
+   setTimeout(function() {
+		location.reload();
+		}, 2500);
+} 
+</script>
+
+<script type="text/javascript">  
+function concatenate(first, last) 
+{ 
+   var full; 
+ 
+   full = first + last; 
+   return  full; 
+} 
+function s1() 
+{ 
+   var result; 
+   result = concatenate('Zara ', 'Ali'); 
+   document.write (result ); 
+   setTimeout(function() {
+		location.reload();
+		}, 2500);
+} 
+</script> 
+
+<script type="text/javascript"> 
+
+function hypotenuse(a, b) { 
+   function square(x) { return x*x; } 
+    
+   return Math.sqrt(square(a) + square(b)); 
+} 
+function s2(){ 
+   var result; 
+   result = hypotenuse(1,2); 
+   document.write ( result ); 
+   setTimeout(function() {
+		location.reload();
+		}, 2500);
+}  
+</script>  
+
+<script type="text/javascript"> 
+var func = new Function("x", "y", "return x*y;"); 
+function s3(){ 
+var result; 
+result = func(10,20);
+  document.write ( result ); 
+  setTimeout(function() {
+		location.reload();
+		}, 2500);
+} 
+</script>
+
+<script type="text/javascript"> 
+var func = function(x,y){ return x*y }; 
+ 
+function s4(){ 
+   var result; 
+   result = func(10,20); 
+   document.write ( result );
+   document.write ( " (no es un error, da lo mismo que la anterior)" ); 
+   setTimeout(function() {
+		location.reload();
+		}, 2500);
+} 
+</script>
+
+</head>  
+ 
+<body> 
+ <p>Cada botón corresponde a un ejemplo del libro</p> 
+<form>  
+<input type="button" onclick="SayHello()" value="bienvenido">  
+</form> 
+<form>  
+<input type="button" onclick="ne('Zara', 7)" value="nombre y edad">  
+</form> 
+<form>  
+<input type="button" onclick="s1()" value="nombre completo">  
+</form>  
+<form>  
+<input type="button" onclick="s2()" value="la hipotenusa">  
+</form>
+<form>  
+<input type="button" onclick="s3()" value="función de la pág. 70-71">  
+</form> 
+<form>  
+<input type="button" onclick="s4()" value="Última función de el ejercicio 13">  
+</form>
+<a href=""> volver :) </a>
+</body> 
+</html>

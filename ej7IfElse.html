@@ -1,0 +1,50 @@
+<html>
+<head>
+<base href="https://dictatorshipcreator.github.io/REPO_6A/">
+    <title>IFs</title>
+</head> 
+<body> 
+<h3>¿Esta persona puede manejar?</h3>
+<label for="a">Valor de a:</label>
+<input type="number" id="a" value="33"><br><br>
+<button onclick="p()">¿puede manejar?</button>
+<script type="text/javascript"> 
+	function p(){
+		let a = parseFloat(document.getElementById("a").value);
+		if( a > 18 ){ 
+			document.write("<b>Qualifies for driving</b>"); 
+		}else{ 
+			document.write("<b>Does not qualify for driving</b>");
+		}
+		
+		setTimeout(function() {
+		location.reload();
+		}, 5000);
+	}
+</script> 
+
+<h3>¿cual libro es?</h3>
+<label for="book">materia:</label>
+<input type="text" id="book" value="matemáticas"><br><br>
+<button onclick="m()">Libro asociado</button>
+<script type="text/javascript"> 
+let book = (document.getElementById("book").value); 
+function m(){
+if( book == "historia" ){ 
+   document.write("<b>Libro de historia</b>"); 
+}else if( book == "matemáticas" ){ 
+   document.write("<b>Libro de matemáticas</b>"); 
+}else if( book == "economia" ){ 
+   document.write("<b>Libro de economia</b>"); 
+}else{ 
+  document.write("<b>Libro no asociado</b>"); 
+}
+setTimeout(function() {
+		location.reload();
+		}, 5000); 
+}
+</script>
+<br>
+<a href=""> volver :) </a>
+</body> 
+</html>

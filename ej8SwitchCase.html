@@ -1,0 +1,41 @@
+<html> 
+<head>
+<base href="https://dictatorshipcreator.github.io/REPO_6A/">
+</head>
+<body> 
+    <label for="n">Nota:</label>
+    <select id="n">
+        <option value="10">10</option>
+        <option value="9">9</option>
+        <option value="8">8</option>
+        <option value="7">7</option>
+        <option value="6">6</option>
+    </select><br><br>
+
+    <button onclick="g()">so...</button>
+
+    <script type="text/javascript"> 
+        document.write("Entering switch block<br />"); 
+
+        function g() {
+            let n = document.getElementById("n").value; // Obtener el valor correcto del select
+            
+            switch (n) { 
+                case "10": document.write("Good job<br />"); break;
+                case "9": document.write("Pretty good<br />"); break;
+                case "8": document.write("Passed<br />"); break;
+                case "7": document.write("Not so good<br />"); break;
+                case "6": document.write("Failed<br />"); break;
+                default: document.write("Unknown grade<br />");
+            }
+			setTimeout(function() {
+		location.reload();
+		}, 2500);
+        }
+
+        document.write("Exiting switch block"); 
+    </script> 
+<br>
+<a href=""> volver :) </a>
+</body> 
+</html>
